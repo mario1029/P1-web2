@@ -73,15 +73,15 @@ public class Registro extends HttpServlet {
 		String correo = request.getParameter("correo");
 		String edad = request.getParameter("edad");
 		String usuario = request.getParameter("username");
-		if(name.isBlank()||(name.length()>30)) {
+		if(name.isEmpty()||(name.length()>30)) {
 			html+="<br><h3>Nombre invalido nulo o mas de 30 caracteres.</h3>";
 		}else if(!correo.contains("@")) {
 			html+="<br><h3>Correo Invalido</h3>";
-		}else if(pass.isBlank()){
+		}else if(pass.isEmpty()){
 			html+="<br><h3>Debe ingresar una contraseña</h3>";
-		}else if(edad.isBlank()) {
+		}else if(edad.isEmpty()) {
 			html+="<br><h3>Debe ingresar su edad</h3>";
-		}else if(usuario.isBlank()){
+		}else if(usuario.isEmpty()){
 			html+="<br><h3>Falta nombre de usuario</h3>";
 		}else {
 			html+="Nombre introducido:"+name;
