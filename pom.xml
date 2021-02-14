@@ -17,9 +17,10 @@
           <executable>C:\Program Files\Java\jdk-13.0.1\bin\javac</executable>
         </configuration>
       </plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.3</version>
-        <configuration>
+	<plugin>
+        	<artifactId>maven-war-plugin</artifactId>
+       		<version>3.2.3</version>
+        	<configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
