@@ -22,10 +22,10 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
-    </plugins><dependencies>
-
-  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-<dependency>
+    </plugins>
+	<dependencies>
+	  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <version>42.2.18</version>
@@ -39,6 +39,5 @@
     <scope>provided</scope>
 </dependency>
 
-  </dependencies>
   </build>
 </project>
