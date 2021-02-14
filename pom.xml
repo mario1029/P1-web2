@@ -1,39 +1,65 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>WEB2_P1</groupId>
-  <artifactId>WEB2_P1</artifactId>
+  <groupId>Web2_Project1</groupId>
+  <artifactId>Web2_Project1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <name>Web2_P1</name>
+  <description>Web 2 Projecto 1</description>
+  
+      
+<dependencies>
+  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+  <dependency>
+     <groupId>org.postgresql</groupId>
+     <artifactId>postgresql</artifactId>
+     <version>42.2.14</version>
+  </dependency>
+         
+  <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>4.0.1</version>
+    <scope>provided</scope>
+  </dependency>
+           
+ </dependencies>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
+ 
     <plugins>
-	  <plugin>
+
+      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
           <fork>true</fork>
-          <executable>C:\Program Files\Java\jdk-13.0.1\bin\javac</executable>
+		  <executable>C:\Program Files\Java\jdk1.8.0_251\bin\javac</executable>
         </configuration>
       </plugin>
-	<plugin>
-        	<artifactId>maven-war-plugin</artifactId>
-       		<version>3.2.3</version>
-        	<configuration>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+        <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
-	<plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+      
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>3.0.3</version>
+        
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-          <fork>true</fork>
-          <executable>C:\Program Files\Java\jdk1.8.0_251\bin\javac</executable>
+        <appName>web2proyect1</appName>
         </configuration>
       </plugin>
+      
     </plugins>
+
   </build>
 </project>
