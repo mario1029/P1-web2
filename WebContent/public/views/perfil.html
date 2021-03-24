@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Perfil</title>
+<link href="../styles/css.css" rel="stylesheet"/>
+<script src="../scripts/perfil.js" defer></script>
+</head>
+<body>
+
+<form id="perfil">
+	<div id="caja">
+	<div align="center"><h1>DATOS</h1></div>
+	<div id="div">
+	<ul class="left">
+		<li>Usuario:</li>
+		<li>Nombre</li>
+		<li>Apellido</li>
+		<li>Correo</li>
+		<li>Edad</li>
+		<li>Pais</li>
+		<li>Estado</li>
+		<li>Ciudad</li>
+	</ul>
+
+	<ul class="right">
+		<li><input type="text" name="username" id="username" readonly></li>
+		<li><input type="text" name="nombre" id="nombre"></li>
+		<li><input type="text" name="apellido" id="apellido"></li>
+		<li><input type="email" name="correo" id="correo"></li>
+		<li><input type="number" name="edad" id="edad" min="18"></li>
+		<li><input type="text" name="pais" placeholder="pais"></li>
+		<li><input type="text" name="estado" placeholder="estado"></li>
+		<li><input type="text" name="ciudad" placeholder="ciudad"></li>
+		<li><input type="text" name="telf" placeholder="NunTelf"></li>
+		<li><input type="text" name="descripcion" placeholder="descripcion"></li>
+	</ul>
+	</div>
+	<button class="button" id="exit-button">Cerrar Sesion</button>	
+	
+	<button class="button" id="upload-button">Subir Imagen y Video</button>	
+	<br><br><br><br>Imagen del perfil:<input id="imagen-perfil" type="file" />
+	<br>Video de la cuenta:<input id="video-perfil" type="file" />
+	</div>
+</form>
+	<br>
+	<div id="caja">
+		<div id="imagen">
+		</div>
+	</div>
+	<br>
+	<div id="caja">
+		<div id="video">
+		</div>
+	</div>
+</body>
+</html>

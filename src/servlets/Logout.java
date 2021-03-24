@@ -1,9 +1,7 @@
 package servlets;
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -11,43 +9,36 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import controllers.Control_Registro;
+import controllers.Control_Logout;
 
 /**
- * Servlet implementation class Registro
+ * Servlet implementation class Logout
  */
 @MultipartConfig
-@WebServlet("/Registro")
-public class Registro extends HttpServlet {
+@WebServlet("/Logout")
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Registro() {
+    public Logout() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Servlet Registro:iniciado para "+request.getParameter("username"));
 		response.setContentType("application/json");
 		PrintWriter output = response.getWriter();
+		HttpSession sesion = request.getSession();
 		
-		output.println(Control_Registro.agregar(
-				request.getParameter("username"),
-				request.getParameter("nombre"),
-				request.getParameter("apellido"),
-				request.getParameter("password"),
-				request.getParameter("correo"),
-				request.getParameter("edad")));
+		output.println(Control_Logout.salir((String) sesion.getAttribute("user"), request));
 	}
 
 }
