@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Paths;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -42,8 +41,7 @@ public class Multimedia extends HttpServlet {
 		response.setContentType("image/jpeg");
 		
 		Part filePart = request.getPart("archivo1");
-		String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
-		System.out.println("Archivo recibido:"+request.getParameter("nombre")+" -de valor:"+fileName);
+		System.out.println("Archivo recibido:"+request.getParameter("nombre"));
 		ServletOutputStream out = response.getOutputStream();
 		InputStream fileContent = filePart.getInputStream();
 		
